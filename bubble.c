@@ -1,41 +1,34 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-      int arr[5]={5, 3, 8, 9, 2}; // 정렬되기 전의 5개의 값을 지정
+  int arr[10] = { 50, 20, 70, 54, 98, 63, 82, 69, 12, 51 };//데이터 설정
+  int i, j , tmp; //변수 설정
 
-      int i, j, tmp;
-
-      printf("********버블 정렬 전********\n");
-      for(i=0; i<5; i++)
+  printf("정렬 전 : ");
+  for(i = 0; i < 10; i++){
+    printf("%d ", arr[i]);
+  }
+    printf("\n");
+    //for 문을 이용한 정렬 전 데이터 출력
+  for(i = 0; i < 9; i++)//버블 정렬 알고리즘
+  {
+    for (j = 9; j > i; j--)
+    //자기 자신과 비교를 하지 않기 때문에 n-1을 해준다(n=데이터 개수)
+    {
+       if (arr[j - 1] > arr[j])//인접한 두 항 비교
       {
-        printf("%d ", arr[i]);
-      }
-
-      printf("\n"); // 버블 정렬 전의 값
-
-      printf("********버블 정렬 과정********\n");
-      for(i=0; i<4; i++)
-      {
-        for(j=0; j<4; j++)
-        {
-          if(arr[j]>arr[j+1]) // arr[j] > arr[j+1] 일 때 다음 조건을 수행.
-          {
-            tmp=arr[j]; // tmp 값에 미리 저장
-            arr[j]=arr[j+1]; // arr[j]를 arr[j+1]로 바꾸고
-            arr[j+1]=tmp; // arr[j+1]을 arr[j]의 값으로 바꾼다.
-
-            for(int k=0; k<5; k++)
-                printf("%d ", arr[k]);
-            printf("\n"); // 버블 정렬되는 과정을 출력.
-          }
-        }
-      }
-
-      printf("********버블정렬 후********\n");
-      for(i=0; i<5; i++)
-        printf("%d ", arr[i]);
-      printf("\n");
-      // 버블 정렬 후의 값
-
-      return 0;
-}
+      tmp = arr[j - 1];
+      arr[j - 1] = arr[j];
+      arr[j] = tmp;
+      //인접한 데이터 값을 비교하여 큰 값을 오른쪽으로 이동함(스왑을 통하여)
+    }
+  }
+  }
+  printf("정렬 후 : ");
+  for(i = 0; i < 10; i++)
+    {
+      printf("%d ", arr[i]);
+    }
+    //for 문을 이용한 정렬 후 데이터 출력
+ return 0;//프로그램 정상종료
+ }
