@@ -25,7 +25,7 @@ void main() {
 void stack_push() {
 	int n;
 	if (top >= SIZE) {
-	printf("Л┼╓М┐² Л≤╓К╡└ М■▄К║°Л ╟\n\n");
+	printf("╫╨ец ©ю╧Ж гц╥н©Л\n\n");
 	}
 	else
 	{
